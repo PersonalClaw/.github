@@ -1,0 +1,56 @@
+name: Bug report
+description: Something in this repository behaves incorrectly.
+labels: ["needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report.
+
+        **Before pasting logs, config, or a manifest: redact API keys, tokens, device
+        tokens, and private file paths.** Agent and app logs can contain all of them.
+
+        If this is a bug in the **core platform** (gateway, dashboard, CLI, memory,
+        knowledge, security) file it in
+        [PersonalClaw/PersonalClaw](https://github.com/PersonalClaw/PersonalClaw/issues/new/choose)
+        instead — it has fuller forms. If it is a **security flaw**, do not file it here at
+        all: use [private reporting](https://github.com/PersonalClaw/PersonalClaw/security/advisories/new).
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. …
+        2. …
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: "The tag, release, or commit SHA you saw this on. For a PersonalClaw install: output of `personalclaw --version`."
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: OS and Python version
+      placeholder: "macOS 15.3 / Python 3.12.8"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: Error text or log lines. Redact secrets first.
+      render: text
+    validations:
+      required: false
