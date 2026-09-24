@@ -1,0 +1,17 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question, idea, or show-and-tell
+    url: https://github.com/PersonalClaw/PersonalClaw/discussions
+    about: One Discussions home for the whole organization — ask here rather than opening an issue, so the answer helps the next person too.
+  - name: Report a security vulnerability (privately)
+    url: https://github.com/PersonalClaw/PersonalClaw/security/advisories/new
+    about: Never report a security issue as a public issue. This opens a private advisory visible only to you and the maintainer.
+  - name: Bug in the core platform (gateway, dashboard, CLI, memory, knowledge)
+    url: https://github.com/PersonalClaw/PersonalClaw/issues/new/choose
+    about: Core has its own detailed forms. File platform bugs there, not here.
+  - name: Bug in a first-party app bundle
+    url: https://github.com/PersonalClaw/PersonalClawApps/issues/new/choose
+    about: Model providers, search, speech, channels, agent runtimes, and full apps live in the apps repo.
+  - name: Get your app listed in the registry
+    url: https://github.com/PersonalClaw/registry/blob/main/CONTRIBUTING.md
+    about: Listing is one PR adding a row. Read the listing policy first — every rule is enforced by CI, not by review.

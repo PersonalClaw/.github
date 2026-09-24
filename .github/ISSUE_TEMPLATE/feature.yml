@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose a change to this repository.
+labels: ["needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you are not sure this is the right repository, or the idea is still taking shape,
+        open it in [Discussions → Ideas](https://github.com/PersonalClaw/PersonalClaw/discussions/categories/ideas)
+        instead — that is where shaping happens, and nothing is lost by starting there.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you unable to do today? Describe the situation, not the solution you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you'd like instead
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried or considered
+      description: Existing apps, settings, or workarounds you already ruled out — and why they don't cover it.
+    validations:
+      required: false
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: Would you be willing to implement this?
+      options:
+        - label: I'd be willing to open a PR for it
+          required: false
