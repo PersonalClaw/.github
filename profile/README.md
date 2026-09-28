@@ -84,26 +84,15 @@ because core points at it.
 | 📋 **[registry](https://github.com/PersonalClaw/registry)** | The **community app list**. Core ships this repo's URL as a *removable* default git source, so listed apps appear in your Store next to any source you add yourself. It is a list, not a store and not an endorsement: every listing publishes its scanner verdict rather than being quietly curated by one. [Listing policy](https://github.com/PersonalClaw/registry/blob/main/CONTRIBUTING.md) · [delisting policy](https://github.com/PersonalClaw/registry/blob/main/DELISTING.md). |
 | 📡 **[personalclaw-push-relay](https://github.com/PersonalClaw/personalclaw-push-relay)** | A **stateless, content-free** push relay for the mobile companion — it forwards ids-only wake-up pings to APNs/FCM and stores nothing. Self-hosted push (ntfy/UnifiedPush) needs no relay at all; this exists only because native APNs/FCM can be sent solely by whoever holds the app's signing credentials. Deploy your own. |
 
-### Fork one of these to build an app
+### Make your own app
 
-Start from **[app-template](https://github.com/PersonalClaw/app-template)**, which holds the files `personalclaw app new`
-generates, or fork the exemplar for your provider contract. Each exemplar installs through the
-Store from its own git URL and is listed in the registry. They are deliberately tiny and heavily
-commented, and the README of each is a lesson in the contract it implements.
+`personalclaw app new <name> --type <kind>` scaffolds a working app, with its tests, for any
+provider contract. **[app-template](https://github.com/PersonalClaw/app-template)** holds the same files ready to clone, rename and ship.
 
-| Repository | What it is |
-|---|---|
-| 🧱 **[app-template](https://github.com/PersonalClaw/app-template)** | The app template: a working tool app with its tests and CI. Clone it, rename it, ship it. |
-| 🕳️ **[channel-null](https://github.com/PersonalClaw/channel-null)** | `ChannelTransportProvider` — accepts every message, delivers none. The smallest honest transport, and the conformance baseline. |
-| 🏠 **[action-home-assistant](https://github.com/PersonalClaw/action-home-assistant)** | `ActionProvider` — fires a Home Assistant webhook. Teaches validate-don't-raise and honest dry-run/reversal claims. |
-
-For an inbox source or a trigger source, read the first-party apps in PersonalClawApps:
-[inbox-github-notifications](https://github.com/PersonalClaw/PersonalClawApps/tree/main/inbox-github-notifications) (`MessageSourceProvider`) and
-[watched-source-github](https://github.com/PersonalClaw/PersonalClawApps/tree/main/watched-source-github) (`TriggerSourceProvider`).
-
-The full contract is in the
-[app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md),
-and `personalclaw app new --type <kind>` scaffolds a working app in one command.
+To see a whole contract in a real app, read the first-party apps in
+[PersonalClawApps](https://github.com/PersonalClaw/PersonalClawApps). The
+[app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md)
+has the full contract.
 
 ---
 
@@ -258,7 +247,7 @@ We'd rather tell you plainly now than surprise you on an update.
 | **Report a bug** in the gateway, dashboard, CLI, memory, knowledge, or security | [core issues](https://github.com/PersonalClaw/PersonalClaw/issues/new/choose) |
 | **Report a bug in a first-party app** (a provider, channel, or agent bundle) | [apps issues](https://github.com/PersonalClaw/PersonalClawApps/issues/new/choose) |
 | **Get your app listed** so others can install it | one PR adding a row to [registry](https://github.com/PersonalClaw/registry) — read its [listing policy](https://github.com/PersonalClaw/registry/blob/main/CONTRIBUTING.md) first; every rule is enforced by CI, not by review |
-| **Write an app** | start from [app-template](https://github.com/PersonalClaw/app-template) or the exemplar for your contract (above), then the [app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md) and [platform architecture](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/platform-architecture.md) |
+| **Write an app** | start from `personalclaw app new` or [app-template](https://github.com/PersonalClaw/app-template) (above), then the [app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md) and [platform architecture](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/platform-architecture.md) |
 | **Change core** | the [contributing guide](https://github.com/PersonalClaw/PersonalClaw/blob/main/CONTRIBUTING.md) — engineering doctrine (clean break, provider-agnostic core, validate-as-a-user), dev setup, and the definition of done |
 | **Report a security issue** | **privately**, never as a public issue — [security policy](https://github.com/PersonalClaw/PersonalClaw/blob/main/SECURITY.md) |
 
