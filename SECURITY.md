@@ -38,10 +38,9 @@ If a report stalls past those windows, a polite nudge on the advisory thread is 
   [delisting policy](https://github.com/PersonalClaw/registry/blob/main/DELISTING.md),
   which is the faster path than an advisory. A flaw in the *validator* — something that
   lets a listing bypass the scanner dry-run — is a vulnerability: report it.
-- **The exemplar apps** (`channel-null`, `inbox-github-notifications`,
-  `watched-source-github`, `action-home-assistant`) — these are reference code people
-  fork. A flaw that a forker would inherit is worth reporting even though the exemplar
-  itself handles little.
+- **The exemplar apps and the template** (`channel-null`, `action-home-assistant`,
+  `app-template`) — these are reference code people fork. A flaw that a forker would
+  inherit is worth reporting even though the exemplar itself handles little.
 - **[personalclaw-push-relay](https://github.com/PersonalClaw/personalclaw-push-relay)** —
   its whole security claim is that it is stateless and content-free. Any path that gets
   content or state through it is a vulnerability, including a log line that carries more
