@@ -74,7 +74,7 @@ because core points at it.
 | Repository | What it is |
 |---|---|
 | 🦞 **[PersonalClaw](https://github.com/PersonalClaw/PersonalClaw)** | The **platform** — the gateway, agentic core, memory, knowledge, skills, automation, security, and the permission-gated app platform. Python 3.12 · aiohttp · React + Vite SPA · SQLite. This is where every capability and contract originates. |
-| 🧩 **[PersonalClawApps](https://github.com/PersonalClaw/PersonalClawApps)** | The **first-party app bundles** — 69 apps across model providers, search, speech, local models, agents (ACP), channels, tools, and full backend + UI apps. Each imports core **only** through the stable SDK and installs through the same scanner-gated Store as any third-party app. |
+| 🧩 **[PersonalClawApps](https://github.com/PersonalClaw/PersonalClawApps)** | The **first-party app bundles** — model providers, search, speech, local models, agents (ACP), channels, tools, and full backend + UI apps. Each imports core **only** through the stable SDK and installs through the same scanner-gated Store as any third-party app. |
 | 🌐 **[personalclaw.dev](https://github.com/PersonalClaw/personalclaw.dev)** | The **public website** — product, documentation, security, installation, and ecosystem surface. A zero-tracking, Astro-built projection of *released* PersonalClaw, pinned to exact core + apps revisions so it can never claim something the product can't back. |
 
 ### The community ecosystem
@@ -86,16 +86,20 @@ because core points at it.
 
 ### Fork one of these to build an app
 
-Four **exemplar apps**, one per provider contract, each installable through the Store from
-its own git URL and each listed in the registry. They are deliberately tiny and
-heavily commented — the README of each is a lesson in the contract it implements.
+Start from **[app-template](https://github.com/PersonalClaw/app-template)**, which holds the files `personalclaw app new`
+generates, or fork the exemplar for your provider contract. Each exemplar installs through the
+Store from its own git URL and is listed in the registry. They are deliberately tiny and heavily
+commented, and the README of each is a lesson in the contract it implements.
 
-| Repository | Contract it teaches |
+| Repository | What it is |
 |---|---|
+| 🧱 **[app-template](https://github.com/PersonalClaw/app-template)** | The app template: a working tool app with its tests and CI. Clone it, rename it, ship it. |
 | 🕳️ **[channel-null](https://github.com/PersonalClaw/channel-null)** | `ChannelTransportProvider` — accepts every message, delivers none. The smallest honest transport, and the conformance baseline. |
-| 📥 **[inbox-github-notifications](https://github.com/PersonalClaw/inbox-github-notifications)** | `MessageSourceProvider` — your GitHub notifications as inbox items. Stdlib only; teaches checkpoints and degrade-to-empty. |
-| 👀 **[watched-source-github](https://github.com/PersonalClaw/watched-source-github)** | `TriggerSourceProvider` — watches repos, emits `new_release` / `new_issue`. Teaches the push contract and the first-observation high-water mark. |
 | 🏠 **[action-home-assistant](https://github.com/PersonalClaw/action-home-assistant)** | `ActionProvider` — fires a Home Assistant webhook. Teaches validate-don't-raise and honest dry-run/reversal claims. |
+
+For an inbox source or a trigger source, read the first-party apps in PersonalClawApps:
+[inbox-github-notifications](https://github.com/PersonalClaw/PersonalClawApps/tree/main/inbox-github-notifications) (`MessageSourceProvider`) and
+[watched-source-github](https://github.com/PersonalClaw/PersonalClawApps/tree/main/watched-source-github) (`TriggerSourceProvider`).
 
 The full contract is in the
 [app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md),
@@ -221,7 +225,7 @@ running history is in the
 <div align="center">
 <img src="./assets/screens/apps-dark.png" alt="The permission-gated app Store — providers, search, channels, agents, and full apps" width="80%" />
 <br />
-<sub><em>The Store — 69 first-party apps, each installed through a quarantine → security-scan → consent lifecycle.</em></sub>
+<sub><em>The Store — the first-party apps, each installed through a quarantine → security-scan → consent lifecycle.</em></sub>
 </div>
 
 ---
@@ -254,7 +258,7 @@ We'd rather tell you plainly now than surprise you on an update.
 | **Report a bug** in the gateway, dashboard, CLI, memory, knowledge, or security | [core issues](https://github.com/PersonalClaw/PersonalClaw/issues/new/choose) |
 | **Report a bug in a first-party app** (a provider, channel, or agent bundle) | [apps issues](https://github.com/PersonalClaw/PersonalClawApps/issues/new/choose) |
 | **Get your app listed** so others can install it | one PR adding a row to [registry](https://github.com/PersonalClaw/registry) — read its [listing policy](https://github.com/PersonalClaw/registry/blob/main/CONTRIBUTING.md) first; every rule is enforced by CI, not by review |
-| **Write an app** | fork the exemplar for your contract (above), then the [app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md) and [platform architecture](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/platform-architecture.md) |
+| **Write an app** | start from [app-template](https://github.com/PersonalClaw/app-template) or the exemplar for your contract (above), then the [app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md) and [platform architecture](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/platform-architecture.md) |
 | **Change core** | the [contributing guide](https://github.com/PersonalClaw/PersonalClaw/blob/main/CONTRIBUTING.md) — engineering doctrine (clean break, provider-agnostic core, validate-as-a-user), dev setup, and the definition of done |
 | **Report a security issue** | **privately**, never as a public issue — [security policy](https://github.com/PersonalClaw/PersonalClaw/blob/main/SECURITY.md) |
 

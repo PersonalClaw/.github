@@ -22,18 +22,17 @@ are the authority for their own tree:
 | Report a bug in a first-party app bundle (a provider, channel, or agent) | [apps issues](https://github.com/PersonalClaw/PersonalClawApps/issues/new/choose) |
 | Report a bug on the website | [personalclaw.dev issues](https://github.com/PersonalClaw/personalclaw.dev/issues) |
 | Get your app listed so others can install it | a PR adding one row to [registry](https://github.com/PersonalClaw/registry) |
-| Write an app | fork the exemplar for your provider contract, then read the [app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md) |
+| Write an app | start from [app-template](https://github.com/PersonalClaw/app-template) or fork the exemplar for your provider contract, then read the [app creation guide](https://github.com/PersonalClaw/PersonalClawApps/blob/main/docs/app-creation-guide.md) |
 | Report a security issue | **privately** — see [SECURITY.md](SECURITY.md). Never a public issue. |
 
-**Building an app?** Fork the exemplar that matches your contract rather than starting
-blank — each is a few hundred lines and its README is a lesson in the contract:
-[channel-null](https://github.com/PersonalClaw/channel-null) (`ChannelTransportProvider`),
-[inbox-github-notifications](https://github.com/PersonalClaw/inbox-github-notifications)
-(`MessageSourceProvider`),
-[watched-source-github](https://github.com/PersonalClaw/watched-source-github)
-(`TriggerSourceProvider`),
+**Building an app?** Start from [app-template](https://github.com/PersonalClaw/app-template), or fork the exemplar that matches
+your contract, rather than starting blank. Each exemplar is a few hundred lines and its README
+is a lesson in the contract: [channel-null](https://github.com/PersonalClaw/channel-null)
+(`ChannelTransportProvider`) and
 [action-home-assistant](https://github.com/PersonalClaw/action-home-assistant)
-(`ActionProvider`).
+(`ActionProvider`). For an inbox or trigger source, read the first-party
+[inbox-github-notifications](https://github.com/PersonalClaw/PersonalClawApps/tree/main/inbox-github-notifications) (`MessageSourceProvider`)
+and [watched-source-github](https://github.com/PersonalClaw/PersonalClawApps/tree/main/watched-source-github) (`TriggerSourceProvider`).
 
 ## Rules that hold in every repository here
 
